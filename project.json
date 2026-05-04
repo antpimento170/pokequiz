@@ -1,0 +1,21 @@
+{
+  "overview": "A fun and interactive Pokemon quiz game where you test your Pokemon knowledge across generations, types, moves, and more.",
+  "features": [
+    "Multiple quiz types: guess the Pokemon, the type, the move",
+    "Generation filter (Gen 1–9)",
+    "Difficulty and quiz length selectors",
+    "Instant answer feedback with score tracking",
+    "Results screen with performance rating and summary",
+    "Replay or start a new game with different settings",
+    "Responsive design with Pokemon-themed colors and dark mode"
+  ],
+  "category": "game",
+  "tags": [
+    "pokemon",
+    "quiz",
+    "trivia",
+    "game",
+    "interactive"
+  ],
+  "last_updated": "2026-05-04T14:46:09.603Z"
+}

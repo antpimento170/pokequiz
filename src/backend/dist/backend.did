@@ -1,0 +1,50 @@
+type SessionView = 
+ record {
+   id: nat;
+   questions: vec QuestionView;
+   status: SessionStatus;
+ };
+type SessionStatus = 
+ variant {
+   active;
+   completed;
+ };
+type SessionId = nat;
+type ScoreResult = 
+ record {
+   percentage: nat;
+   score: nat;
+   total: nat;
+ };
+type QuizConfig = 
+ record {
+   generation: opt Generation;
+   questionCount: nat;
+ };
+type QuestionView = 
+ record {
+   id: nat;
+   kind: QuestionKind;
+   options: vec text;
+   pokemonId: nat;
+   prompt: text;
+ };
+type QuestionKind = 
+ variant {
+   guessMove;
+   guessName;
+   guessType;
+ };
+type Generation = nat;
+type AnswerResult = 
+ record {
+   correct: bool;
+   correctIndex: nat;
+ };
+service : {
+  createSession: (config: QuizConfig) -> (SessionView);
+  getScore: (sessionId: SessionId) -> (opt ScoreResult) query;
+  getSession: (sessionId: SessionId) -> (opt SessionView) query;
+  submitAnswer: (sessionId: SessionId, questionIndex: nat, chosenIndex:
+   nat) -> (opt AnswerResult);
+}
